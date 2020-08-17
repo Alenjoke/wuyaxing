@@ -2,11 +2,11 @@
   <div class="top">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <div style='display: flex;justify-content: center;' >欢迎!</div>
+        <div style='display: flex;justify-content: center;color: rgba(9,20,80,0.9);font-size: 20px;' >通行证</div>
       </div>
-      <div id="test"></div>
+      <div class="text"></div>
       <div class="btn">
-        <el-button>Let's go!</el-button>
+        <el-button style="font-weight: bold;">我们走</el-button>
       </div>
     </el-card>
   </div>
@@ -24,12 +24,14 @@ export default {
         }
     },
     mounted: function() {
-      let tiper = new Tiper(document.getElementById('test'))
+      let tiper = new Tiper(document.querySelector(".text"))
       tiper.beginTyping(); //Begins typing with default text and config.
       
       tiper.options= {
-        pauseTimeout: 500,
-        hesitation: 0.5
+        hesitation: 1,
+        pauseOnSpace: true,
+        pauseTimeout: 600,
+        showCaret: true,
       }
       tiper.beginTyping();
       tiper.line("我于杀戮之中绽放，亦如黎明中的花朵");
@@ -43,7 +45,12 @@ export default {
   animation: move 1s both;
 }
 .text {
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: darkorange;
+  display: flex;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .item {
