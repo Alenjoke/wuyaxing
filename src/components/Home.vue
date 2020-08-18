@@ -2,11 +2,11 @@
   <div class="top">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <div style='display: flex;justify-content: center;color: rgba(9,20,80,0.9);font-size: 20px;' >通行证</div>
+        <div style='display: flex;justify-content: center;color: rgba(9,20,80,0.9);font-size: 20px;' >六十六</div>
       </div>
       <div class="text"></div>
       <div class="btn">
-        <el-button style="font-weight: bold;">我们走</el-button>
+        <el-button @click="toMain()" style="font-weight: bold;">我们走</el-button>
       </div>
     </el-card>
   </div>
@@ -35,6 +35,11 @@ export default {
       }
       tiper.beginTyping();
       tiper.line("我于杀戮之中绽放，亦如黎明中的花朵");
+    },
+    methods: {
+        toMain: function() {
+            this.$router.push({name: 'Main'})
+        }
     }
 };
 </script>
